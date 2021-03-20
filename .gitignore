@@ -1,8 +1,11 @@
 **/bin
 **/include
-**/lib
 **/lib64
+**/lib
 **/share
 **/pyvenv.cfg
 **/.vscode
 **/.vs
+**/node_modules
+**/*.lock
+**/tsconfig.*
