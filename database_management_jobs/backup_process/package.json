@@ -16,6 +16,7 @@
     "cron": "^1.8.2"
   },
   "scripts": {
-    "start": "tsc && node lib/backup_process.js"
+    "start": "tsc && node dist/backup_process.js",
+    "build": "tsc"
   }
 }

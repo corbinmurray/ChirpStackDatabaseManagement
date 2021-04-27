@@ -18,5 +18,9 @@
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.6.0"
+  },
+  "scripts": {
+    "start": "tsc && node dist/retention_process.js",
+    "build": "tsc"
   }
 }
