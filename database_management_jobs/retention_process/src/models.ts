@@ -51,4 +51,5 @@ DeviceError.init(
   { tableName: "device_error", modelName: "DeviceError", sequelize: sequelize }
 );
 
-export { DeviceError };
+
+export default DeviceError;

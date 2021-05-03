@@ -1,6 +1,5 @@
 import { CronJob } from "cron";
-import { Op } from "sequelize";
-import { DeviceError } from "./models";
+import DeviceError from "./models";
 
 // ------------ Start of driver code ------------
 // The validation function will exit the process if it fails, so no need to worry about thrown errors
@@ -15,19 +14,13 @@ job.start();
 
 // Function declarations
 function backupJob(): void {
-
-  // This is some arbitrary value this can be set to whatever desired
-  let twoWeeksAgoDate = new Date();
-  twoWeeksAgoDate.setDate(twoWeeksAgoDate.getDate() - 14);
-
+  // truncate the device_error table
   DeviceError.destroy({
-    where: {
-      received_at: {
-        [Op.lte]: twoWeeksAgoDate,
-      },
-    },
+    where: {},
+    truncate: true,
   });
 }
+
 function validateCliArguments(): void {
   if (process.argv.length !== 3) {
     // Let the user know that this process needs an argument
